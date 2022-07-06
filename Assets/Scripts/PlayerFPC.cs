@@ -54,4 +54,5 @@ public class PlayerFPC : MonoBehaviour
             cc.Move(mov * Time.deltaTime);
         }
     }
+    
 }
