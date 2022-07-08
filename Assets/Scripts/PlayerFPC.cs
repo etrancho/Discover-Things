@@ -19,6 +19,13 @@ public class PlayerFPC : MonoBehaviour
     public float gravity;
 
     Vector3 mov = Vector3.zero;
+    public GameObject menuPizza;
+    public GameObject menuCroissants;
+    public GameObject menuBananas;
+    public GameObject menuHamburguer;
+    public GameObject menuChinese;
+    public GameObject menuKM;
+    public GameObject menuOil;
 
 
     void Start()
@@ -28,7 +35,9 @@ public class PlayerFPC : MonoBehaviour
 
     void Update()
     {
-        //if (!Menu.InSettings && !Menu2.InLogin && !Menu3.InRegister && !Chat.InChat)
+        if (!menuPizza.activeInHierarchy && !menuCroissants.activeInHierarchy &&!menuBananas.activeInHierarchy 
+        &&!menuHamburguer.activeInHierarchy && !menuChinese.activeInHierarchy &&!menuKM.activeInHierarchy 
+        &&!menuOil.activeInHierarchy)
         {
             //Para controlar la cam
             ejeH = speedH * Input.GetAxis("Mouse X");
@@ -52,7 +61,12 @@ public class PlayerFPC : MonoBehaviour
 
             mov.y -= gravity * Time.deltaTime;
             cc.Move(mov * Time.deltaTime);
+        } 
+        else{
+            Cursor.lockState = CursorLockMode.None;
         }
     }
+
+    
     
 }

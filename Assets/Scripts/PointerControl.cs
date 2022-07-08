@@ -8,12 +8,15 @@ public class PointerControl : MonoBehaviour
     public Camera PlayerCamera;
     public float RayLength;
     string currentObject;
-    //bedrolls
+    public GameObject pointer;
+
+    //bedrolls and fire
     public GameObject roll1;
     public GameObject bedroll1;
     public GameObject roll2;
     public GameObject bedroll2;
-    public GameObject fire;
+    public GameObject campfire;
+    public GameObject campfireNO;
     //boxes
     public GameObject box;
     public GameObject box1;
@@ -23,9 +26,10 @@ public class PointerControl : MonoBehaviour
     public GameObject boxOpen1;
     public GameObject boxOpen2;
     public GameObject boxOpen3;
+    
     //lights
-    public GameObject light;
-    public GameObject lightD;
+    public GameObject light1;
+    public GameObject light1D;
     public GameObject light2;
     public GameObject light2D;
     public GameObject light3;
@@ -38,6 +42,19 @@ public class PointerControl : MonoBehaviour
     public GameObject light6D;
     public GameObject light7;
     public GameObject light7D;
+    public GameObject light8;
+    public GameObject light8D;
+    public GameObject light9;
+    public GameObject light9D;
+
+    //menus
+    public GameObject menuPizza;
+    public GameObject menuCroissants;
+    public GameObject menuBananas;
+    public GameObject menuHamburguer;
+    public GameObject menuChinese;
+    public GameObject menuKM;
+    public GameObject menuOil;
 
     void Start()
     {
@@ -108,8 +125,14 @@ public class PointerControl : MonoBehaviour
                 currentObject = "bedroll2Exit";
                 break;
             //fire
-            case "rocksCampfire":
-                fire.SetActive(true);
+            case "campfire":
+                campfire.SetActive(false);
+                campfireNO.SetActive(true);
+                currentObject = "rocksCampfireExit";
+                break;
+            case "campfireNO":
+                campfireNO.SetActive(false);
+                campfire.SetActive(true);
                 currentObject = "rocksCampfireExit";
                 break;
             //boxes
@@ -118,30 +141,50 @@ public class PointerControl : MonoBehaviour
                 boxOpen.SetActive(true);
                 currentObject = "boxOpenExit";
                 break;
+            case "boxOpen":
+                boxOpen.SetActive(false);
+                box.SetActive(true);
+                currentObject = "boxOpenExit";
+                break;
             case "box1":
                 box1.SetActive(false);
                 boxOpen1.SetActive(true);
                 currentObject = "boxOpen1Exit";
+                break;
+            case "boxOpen1":
+                boxOpen1.SetActive(false);
+                box1.SetActive(true);
+                currentObject = "boxOpenExit";
                 break;
             case "box2":
                 box2.SetActive(false);
                 boxOpen2.SetActive(true);
                 currentObject = "boxOpen2Exit";
                 break;
+            case "boxOpen2":
+                boxOpen2.SetActive(false);
+                box2.SetActive(true);
+                currentObject = "boxOpenExit";
+                break;
             case "box3":
                 box3.SetActive(false);
                 boxOpen3.SetActive(true);
                 currentObject = "boxOpen3Exit";
                 break;
+            case "boxOpen3":
+                boxOpen3.SetActive(false);
+                box3.SetActive(true);
+                currentObject = "boxOpenExit";
+                break;
             //lights
             case "lampFloorLRLIGHT":
-                light.SetActive(false);
-                lightD.SetActive(true);
+                light1.SetActive(false);
+                light1D.SetActive(true);
                 currentObject = "lampFloorLRExit";
                 break;
             case "lampFloorLRDARK":
-                light.SetActive(true);
-                lightD.SetActive(false);
+                light1.SetActive(true);
+                light1D.SetActive(false);
                 currentObject = "lampFloorLRExit";
                 break;
             case "lampFloorLR2LIGHT":
@@ -204,7 +247,69 @@ public class PointerControl : MonoBehaviour
                 light7D.SetActive(false);
                 currentObject = "lampFloorOExit";
                 break;
-            
+            case "lampFloorKLIGHT":
+                light8.SetActive(false);
+                light8D.SetActive(true);
+                currentObject = "lampFloorKExit";
+                break;
+            case "lampFloorKDARK":
+                light8.SetActive(true);
+                light8D.SetActive(false);
+                currentObject = "lampFloorKExit";
+                break;
+            case "lampWallKLIGHT":
+                light9.SetActive(false);
+                light9D.SetActive(true);
+                currentObject = "lampFloorKExit";
+                break;
+            case "lampWallKDARK":
+                light9.SetActive(true);
+                light9D.SetActive(false);
+                currentObject = "lampFloorKExit";
+                break;
+            //food
+            case "PIZZA":
+                menuPizza.SetActive(true);
+                pointer.SetActive(false);
+                Time.timeScale = 0f;
+                currentObject = "PIZZAExit";
+                break;
+            case "CROISSANT1" or "CROISSANT2":
+                menuCroissants.SetActive(true);
+                pointer.SetActive(false);
+                Time.timeScale = 0f;
+                currentObject = "CROISSANT1Exit";
+                break;
+            case "BANANA1" or "BANANA2" or "BANANA3":
+                menuBananas.SetActive(true);
+                pointer.SetActive(false);
+                Time.timeScale = 0f;
+                currentObject = "BANANA1Exit";
+                break;
+            case "BURGUERKING" or "BURGUERMC":
+                menuHamburguer.SetActive(true);
+                pointer.SetActive(false);
+                Time.timeScale = 0f;
+                currentObject = "BURGUERKINGExit";
+                break;
+            case "CHINESE1" or "CHINESE2":
+                menuChinese.SetActive(true);
+                pointer.SetActive(false);
+                Time.timeScale = 0f;
+                currentObject = "CHINESE1Exit";
+                break;
+            case "KETCHUP" or "MUSTARD":
+                menuKM.SetActive(true);
+                pointer.SetActive(false);
+                Time.timeScale = 0f;
+                currentObject = "KETCHUPExit";
+                break;
+            case "OIL":
+                menuOil.SetActive(true);
+                pointer.SetActive(false);
+                Time.timeScale = 0f;
+                currentObject = "OILExit";
+                break;
         }
         
     }
