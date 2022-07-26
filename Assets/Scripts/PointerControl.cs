@@ -56,6 +56,10 @@ public class PointerControl : MonoBehaviour
     public GameObject menuKM;
     public GameObject menuOil;
 
+    //audio
+    public AudioSource fire;
+    public AudioSource switchs;
+
     void Start()
     {
         currentObject = "";
@@ -128,11 +132,13 @@ public class PointerControl : MonoBehaviour
             case "campfire":
                 campfire.SetActive(false);
                 campfireNO.SetActive(true);
+                fire.Play();
                 currentObject = "rocksCampfireExit";
                 break;
             case "campfireNO":
                 campfireNO.SetActive(false);
                 campfire.SetActive(true);
+                fire.Stop();
                 currentObject = "rocksCampfireExit";
                 break;
             //boxes
@@ -180,131 +186,149 @@ public class PointerControl : MonoBehaviour
             case "lampFloorLRLIGHT":
                 light1.SetActive(false);
                 light1D.SetActive(true);
+                switchs.Play();
                 currentObject = "lampFloorLRExit";
                 break;
             case "lampFloorLRDARK":
                 light1.SetActive(true);
                 light1D.SetActive(false);
+                switchs.Play();
                 currentObject = "lampFloorLRExit";
                 break;
             case "lampFloorLR2LIGHT":
                 light2.SetActive(false);
                 light2D.SetActive(true);
+                switchs.Play();
                 currentObject = "lampFloorLR2Exit";
                 break;
             case "lampFloorLR2DARK":
                 light2.SetActive(true);
                 light2D.SetActive(false);
+                switchs.Play();
                 currentObject = "lampFloorLRExit";
                 break;
             case "lampTableLIGHT":
                 light3.SetActive(false);
                 light3D.SetActive(true);
+                switchs.Play();
                 currentObject = "lampTableExit";
                 break;
             case "lampTableDARK":
                 light3.SetActive(true);
                 light3D.SetActive(false);
+                switchs.Play();
                 currentObject = "lampTableExit";
                 break;
             case "lampFloorOLIGHT":
                 light4.SetActive(false);
                 light4D.SetActive(true);
+                switchs.Play();
                 currentObject = "lampFloorOExit";
                 break;
             case "lampFloorODARK":
                 light4.SetActive(true);
                 light4D.SetActive(false);
+                switchs.Play();
                 currentObject = "lampFloorOExit";
                 break;
             case "lampWallLRLIGHT":
                 light5.SetActive(false);
                 light5D.SetActive(true);
+                switchs.Play();
                 currentObject = "lampFloorOExit";
                 break;
             case "lampWallLRDARK":
                 light5.SetActive(true);
                 light5D.SetActive(false);
+                switchs.Play();
                 currentObject = "lampFloorOExit";
                 break;
             case "lightpostLIGHT":
                 light6.SetActive(false);
                 light6D.SetActive(true);
+                switchs.Play();
                 currentObject = "lampFloorOExit";
                 break;
             case "lightpostDARK":
                 light6.SetActive(true);
                 light6D.SetActive(false);
+                switchs.Play();
                 currentObject = "lampFloorOExit";
                 break;
             case "lampWallBLIGHT":
                 light7.SetActive(false);
                 light7D.SetActive(true);
+                switchs.Play();
                 currentObject = "lampFloorOExit";
                 break;
             case "lampWallBDARK":
                 light7.SetActive(true);
                 light7D.SetActive(false);
+                switchs.Play();
                 currentObject = "lampFloorOExit";
                 break;
             case "lampFloorKLIGHT":
                 light8.SetActive(false);
                 light8D.SetActive(true);
+                switchs.Play();
                 currentObject = "lampFloorKExit";
                 break;
             case "lampFloorKDARK":
                 light8.SetActive(true);
                 light8D.SetActive(false);
+                switchs.Play();
                 currentObject = "lampFloorKExit";
                 break;
             case "lampWallKLIGHT":
                 light9.SetActive(false);
                 light9D.SetActive(true);
+                switchs.Play();
                 currentObject = "lampFloorKExit";
                 break;
             case "lampWallKDARK":
                 light9.SetActive(true);
                 light9D.SetActive(false);
+                switchs.Play();
                 currentObject = "lampFloorKExit";
                 break;
             //food
-            case "PIZZA":
+            case "infoPizza":
                 menuPizza.SetActive(true);
                 pointer.SetActive(false);
                 Time.timeScale = 0f;
                 currentObject = "PIZZAExit";
                 break;
-            case "CROISSANT1" or "CROISSANT2":
+            case "infoCroissant":
                 menuCroissants.SetActive(true);
                 pointer.SetActive(false);
                 Time.timeScale = 0f;
                 currentObject = "CROISSANT1Exit";
                 break;
-            case "BANANA1" or "BANANA2" or "BANANA3":
+            case "infoBananas":
                 menuBananas.SetActive(true);
                 pointer.SetActive(false);
                 Time.timeScale = 0f;
                 currentObject = "BANANA1Exit";
                 break;
-            case "BURGUERKING" or "BURGUERMC":
+            case "infoBurguer1" or "infoBurguer2":
                 menuHamburguer.SetActive(true);
                 pointer.SetActive(false);
                 Time.timeScale = 0f;
                 currentObject = "BURGUERKINGExit";
                 break;
-            case "CHINESE1" or "CHINESE2":
+            case "infoChinese1" or "infoChinese2":
                 menuChinese.SetActive(true);
                 pointer.SetActive(false);
                 Time.timeScale = 0f;
                 currentObject = "CHINESE1Exit";
                 break;
-            case "KETCHUP" or "MUSTARD":
+            case "infoKetchup" or "infoMustard":
                 menuKM.SetActive(true);
                 pointer.SetActive(false);
                 Time.timeScale = 0f;
                 currentObject = "KETCHUPExit";
                 break;
-            case "OIL":
+            case "infoOil":
                 menuOil.SetActive(true);
                 pointer.SetActive(false);
                 Time.timeScale = 0f;

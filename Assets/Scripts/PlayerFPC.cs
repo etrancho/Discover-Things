@@ -35,9 +35,9 @@ public class PlayerFPC : MonoBehaviour
 
     void Update()
     {
-        if (!menuPizza.activeInHierarchy && !menuCroissants.activeInHierarchy &&!menuBananas.activeInHierarchy 
-        &&!menuHamburguer.activeInHierarchy && !menuChinese.activeInHierarchy &&!menuKM.activeInHierarchy 
-        &&!menuOil.activeInHierarchy)
+        if (!menuPizza.activeInHierarchy && !menuCroissants.activeInHierarchy && !menuBananas.activeInHierarchy 
+        && !menuHamburguer.activeInHierarchy && !menuChinese.activeInHierarchy && !menuKM.activeInHierarchy 
+        && !menuOil.activeInHierarchy)
         {
             //Para controlar la cam
             ejeH = speedH * Input.GetAxis("Mouse X");
